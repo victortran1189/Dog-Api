@@ -1,0 +1,50 @@
+<html  ng-app="myDogApp">
+
+<head>
+  <title> Dog Test </title>
+  <script src= "node_modules\angular\angular.js"> </script>
+  <link href="node_modules\dragular\dist\dragular.css" rel='stylesheet' type='text/css' />
+  <script src="node_modules\dragular\dist\dragular.js"></script>
+  <script src="app.js"> </script>
+  <script src="node_modules\dragular\src\dragularService.js"> </script>
+
+</head>
+
+
+<body>
+<h1> Dog Randomizer </h1>
+  <div ng-controller="DogController">
+
+
+    <div>
+    <img src="{{randomDog.message}}"  height="200" width="200">
+    </div>
+
+    <form>
+    Name the Dog: <input type="text" ng-model="randomDog.name">
+    </form>
+
+
+    <button ng-click="myFunc()">
+       New Dog
+    </button>
+
+    <button ng-click="keepDogs()">
+       Keep Dog
+    </button>
+    <div ng-if="message"> {{ message }} </div>
+
+
+    <h2> Favorite Dogs </h2>
+  <div class='containerVertical'>
+
+      <li ng-click="myName(dog)" ng-repeat="dog in allDogs track by $index">
+          <img  src="{{dog.message}}" height="100" width="100">
+            {{dog.name}}
+      </li>
+
+  </div>
+</div>
+</body>
+
+</html>
