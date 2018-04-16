@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "hello",
+      "author": "hello2"
+    }
+  ],
+  "myDogs": [
+    {
+      "name": "hey",
+      "message": "https://s3-eu-west-1.amazonaws.com/dog-ceo-stanford-files/dhole/n02115913_1772.jpg",
+      "id": 1
+    },
+    {
+      "message": "https://s3-eu-west-1.amazonaws.com/dog-ceo-stanford-files/entlebucher/n02108000_364.jpg",
+      "id": 2
+    },
+    {
+      "name": "Greg",
+      "message": "https://s3-eu-west-1.amazonaws.com/dog-ceo-stanford-files/schnauzer-miniature/n02097047_1921.jpg",
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

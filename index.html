@@ -1,50 +1,72 @@
-<html  ng-app="myDogApp">
+<html ng-app="myDogApp">
 
 <head>
   <title> Dog Test </title>
-  <script src= "node_modules\angular\angular.js"> </script>
+  <script src="node_modules\angular\angular.js">
+  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link href="node_modules\dragular\dist\dragular.css" rel='stylesheet' type='text/css' />
   <script src="node_modules\dragular\dist\dragular.js"></script>
-  <script src="app.js"> </script>
-  <script src="node_modules\dragular\src\dragularService.js"> </script>
+  <script src="app.js">
+  </script>
 
 </head>
 
 
-<body>
-<h1> Dog Randomizer </h1>
-  <div ng-controller="DogController">
+<body style="background-color:	#87CEFA;">
 
-
-    <div>
-    <img src="{{randomDog.message}}"  height="200" width="200">
-    </div>
-
-    <form>
-    Name the Dog: <input type="text" ng-model="randomDog.name">
-    </form>
-
-
-    <button ng-click="myFunc()">
-       New Dog
-    </button>
-
-    <button ng-click="keepDogs()">
-       Keep Dog
-    </button>
-    <div ng-if="message"> {{ message }} </div>
-
-
-    <h2> Favorite Dogs </h2>
-  <div class='containerVertical'>
-
-      <li ng-click="myName(dog)" ng-repeat="dog in allDogs track by $index">
-          <img  src="{{dog.message}}" height="100" width="100">
-            {{dog.name}}
-      </li>
+  <div class="jumbotron">
+    <h1 class="display-3">Dog App</h1>
+    <p class="lead">By Victor Tran</p>
+    <hr class="my-4">
+    <p>Click the button "New Dog" below to start!</p>
+    <p>Click the button "Keep Dog" if you wish to keep the Dog</p>
 
   </div>
-</div>
+
+
+  <div ng-controller="DogController">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div>
+            <h4> Press "New Dog" to display a Dog </h4>
+            <img ng-src="{{randomDog.message}}" height="200" width="300">
+          </div>
+        </div>
+
+        <div class="col-sm" style="text-align:center;">
+          <form>
+            <h4> Name the Dog: </h4>
+            <input type="text" ng-model="randomDog.name">
+          </form>
+        </div>
+
+        <div class="col-sm" style="text-align:right;">
+          <button type="button" ng-click="myFunc()" class="btn btn-primary  btn-lg">
+           New Dog!
+          </button>
+          <button type="button" ng-click="keepDogs()" class="btn btn-warning  btn-lg">
+            Keep Dog
+          </button>
+        </div>
+      </div>
+
+
+
+      <h2 style="text-align:center;"> Favorite Dogs </h2>
+
+      <div style="text-align:center;" class="" ng-repeat="dog in allDogs track by $index">
+        <li ng-click="myName(dog)">
+          <img ng-src="{{dog.message}}" height="200" width="200">
+          <button type="button" class="btn btn-danger" ng-click="deleteDog(dog.id)"> x </button>
+        </li>
+        <div>
+          <h4>{{dog.name}} </h4>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
